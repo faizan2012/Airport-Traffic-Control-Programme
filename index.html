@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="scripts/Aircraft.js"></script>
+    <script src="scripts/Runway.js"></script>
+    <script src="scripts/main.js"></script>  
+    <style>
+        #outline {
+            border: 1.5px solid orangered
+        }
+
+        div {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            height: 950px;
+            width: 600px;
+        }
+
+        h1 {
+            background: lightblue;
+            padding: 15px;
+            margin-top: 0px;
+        }
+
+        h2 {
+            background: lightskyblue;
+            padding: 5px;
+            font-size: 35px;
+            margin-top: -20px;            
+        }
+
+        button {
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        #list {
+            padding: 10px;
+            margin-right: 10px;
+            margin-left: 145px;
+        }
+        
+        #Runway {
+            border: 1.5px dotted red;
+            margin-top: 75px;
+            height: 50px;
+            width: 450px;
+        }
+
+        #reportButton {
+
+            margin-top: 40px;
+            margin-left: 250px;
+        }
+
+    </style>    
+</head>
+<body>
+    <div id="outline"> 
+        <h1 align = 'center'>AIR TRAFFIC CONTROL SYSTEM</h1>
+        <h2 id="momenttd" align = 'center'></h2>         
+        <input id="myInput" type="text">
+        <button type="button" onclick="Going()">TAKING OFF</button>
+        <button type="button" onclick="Landing()">LANDING</button>
+        <div id="Runway">
+            <script>
+            function Going() {
+                var text;
+                var aircrafts = document.getElementById('myInput').value;
+
+                switch(aircrafts) {
+                    case 'DC35':
+                        text = new Aircraft(10, 20);
+                        break;
+                }
+                document.getElementById('Runway').innerHTML = text;
+            }
+            </script>
+        </div>
+        <div id="Runway"></div>
+        <div id="Runway"></div>
+        <div id="Runway"></div>
+        <div id="Runway"></div>
+       <!-- <button type="button" id="reportButton" onclick="Report()">REPORT</button> !-->           
+    </div>
+    <script type="text/javascript">
+        var myVar = setInterval(myTimer, 100);
+
+        function myTimer() {
+            var d = new Date();
+            document.getElementById('momenttd').innerHTML = d.toLocaleTimeString();
+        }
+    </script>
+
+</body>
+
+
+
+
+</html>
